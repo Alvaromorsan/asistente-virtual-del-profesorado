@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Virtual - Roles del Centro</title>
+    <!-- Favicon con el logo del Josefa -->
+    <link rel="icon" href="Logo%20circular%20josefa.jpg" type="image/jpeg">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+            min-height: 100vh;
+        }
+
+
+        /* Animación suave para el fondo */
+        .bg-circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.4;
+            filter: blur(40px);
+            animation: float 20s infinite ease-in-out;
+        }
+
+
+        .circle-1 { top: -10%; left: -10%; width: 50vh; height: 50vh; background: #86efac; animation-delay: 0s; } /* Verde logo */
+        .circle-2 { bottom: -10%; right: -10%; width: 60vh; height: 60vh; background: #7dd3fc; animation-delay: -5s; } /* Azul logo */
+        .circle-3 { top: 40%; left: 40%; width: 40vh; height: 40vh; background: #fde047; animation-delay: -10s; } /* Amarillo logo */
+
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(20px, 40px) rotate(10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+
+        .btn-custom {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-custom:hover {
+            transform: translateY(-3px) scale(1.02);
+            filter: brightness(1.1);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .btn-custom:active {
+            transform: scale(0.98);
+        }
+        
+        /* Animación de entrada */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translate3d(0, 20px, 0); }
+            to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4">
+
+
+    <!-- Fondo animado -->
+    <div class="bg-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+
+    <!-- Contenedor Principal -->
+    <main class="w-full max-w-md glass-card rounded-3xl shadow-2xl overflow-hidden animate-fade-in-up relative">
+        
+        <!-- Cabecera con Logo -->
+        <div class="relative pt-10 pb-6 px-6 text-center">
+            
+            <!-- Contenedor del Logo -->
+            <div class="relative mx-auto w-40 h-40 mb-5 group">
+                <!-- Efecto de brillo detrás del logo -->
+                <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-400 rounded-full blur opacity-50 group-hover:opacity-80 transition duration-500"></div>
+                
+                <!-- IMAGEN DEL LOGO -->
+                <!-- 1. Intenta cargar el archivo local. 2. Si falla, intenta el enlace directo de Google Drive -->
+                <img src="Logo%20circular%20josefa.jpg" 
+                     alt="Logo Dra. Josefa de los Reyes" 
+                     class="relative w-40 h-40 rounded-full object-cover border-4 border-white shadow-xl mx-auto bg-white transition-transform hover:scale-105 duration-300"
+                     onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/d/1EIA63fBZwKauPBX5rn8oepnlGOPa9KVI=s400';">
+            </div>
+            
+            <h1 class="text-2xl font-bold text-gray-800 mb-1 leading-tight">Dra. Josefa de los Reyes</h1>
+            <p class="text-gray-500 text-sm font-medium tracking-wide uppercase">Asistente Virtual</p>
+            
+            <div class="mt-4 mb-2 text-gray-600 text-sm">
+                Selecciona tu perfil para acceder:
+            </div>
+        </div>
+
+
+        <!-- Botones de Roles -->
+        <div class="px-6 pb-8 space-y-4">
+            
+            <!-- Botón 1: Profesor/a (Azul Corporativo) -->
+            <a href="https://gemini.google.com/gem/1mKQwEv-QllEhKgQtvnEz8bS9gD1yIYDR?usp=sharing" target="_blank" class="btn-custom block w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold py-4 px-6 rounded-xl flex items-center justify-between shadow-lg shadow-blue-200/50">
+                <span class="flex items-center gap-4">
+                    <div class="bg-white/20 p-2.5 rounded-lg w-10 h-10 flex items-center justify-center">
+                        <i class="fa-solid fa-chalkboard-user text-xl"></i>
+                    </div>
+                    <span class="text-lg">Profesor/a</span>
+                </span>
+                <i class="fa-solid fa-chevron-right opacity-70"></i>
+            </a>
+
+
+            <!-- Botón 2: Tutor/a ESO (Verde Esperanza/Joven) -->
+            <a href="https://gemini.google.com/gem/1KOUQ_SlU5B4oVNrM2e-2-rEDoZuhJnDr?usp=sharing" target="_blank" class="btn-custom block w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-4 px-6 rounded-xl flex items-center justify-between shadow-lg shadow-green-200/50">
+                <span class="flex items-center gap-4">
+                    <div class="bg-white/20 p-2.5 rounded-lg w-10 h-10 flex items-center justify-center">
+                        <i class="fa-solid fa-graduation-cap text-xl"></i>
+                    </div>
+                    <span class="text-lg">Tutor/a ESO</span>
+                </span>
+                <i class="fa-solid fa-chevron-right opacity-70"></i>
+            </a>
+
+
+            <!-- Botón 3: Tutor/a FP (Naranja/Amarillo Técnico) -->
+            <a href="https://gemini.google.com/gem/1HSZ31X2LeOgDGpwgdYCaF9Tl3hpCuQNw?usp=sharing" target="_blank" class="btn-custom block w-full bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-white font-semibold py-4 px-6 rounded-xl flex items-center justify-between shadow-lg shadow-orange-200/50">
+                <span class="flex items-center gap-4">
+                    <div class="bg-white/20 p-2.5 rounded-lg w-10 h-10 flex items-center justify-center">
+                        <i class="fa-solid fa-screwdriver-wrench text-xl"></i>
+                    </div>
+                    <span class="text-lg">Tutor/a FP</span>
+                </span>
+                <i class="fa-solid fa-chevron-right opacity-70"></i>
+            </a>
+
+
+            <!-- Botón 4: Jefe/a de Departamento (Morado/Distinguido) -->
+            <a href="https://gemini.google.com/gem/1-xmBpz0CW7-CH4vhuUVuMU4NW8IgtNGk?usp=sharing" target="_blank" class="btn-custom block w-full bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-semibold py-4 px-6 rounded-xl flex items-center justify-between shadow-lg shadow-purple-200/50">
+                <span class="flex items-center gap-4">
+                    <div class="bg-white/20 p-2.5 rounded-lg w-10 h-10 flex items-center justify-center">
+                        <i class="fa-solid fa-sitemap text-xl"></i>
+                    </div>
+                    <span class="text-lg">Jefe/a de Dpto.</span>
+                </span>
+                <i class="fa-solid fa-chevron-right opacity-70"></i>
+            </a>
+
+
+            <!-- Botón 5: Orientador/a (Rosa/Empático) -->
+            <a href="https://gemini.google.com/gem/1oZqz93okVfEGEPAEhK4W64aiySeiVn2U?usp=sharing" target="_blank" class="btn-custom block w-full bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white font-semibold py-4 px-6 rounded-xl flex items-center justify-between shadow-lg shadow-pink-200/50">
+                <span class="flex items-center gap-4">
+                    <div class="bg-white/20 p-2.5 rounded-lg w-10 h-10 flex items-center justify-center">
+                        <i class="fa-solid fa-compass text-xl"></i>
+                    </div>
+                    <span class="text-lg">Orientador/a</span>
+                </span>
+                <i class="fa-solid fa-chevron-right opacity-70"></i>
+            </a>
+
+
+            <!-- Botón 6: Jefe/a del FEIE (Turquesa/Innovación) -->
+            <a href="https://gemini.google.com/gem/1RD-79HuZcK_JHdyyUrAYYdf9-ROHL_9c?usp=sharing" target="_blank" class="btn-custom block w-full bg-gradient-to-r from-cyan-500 to-teal-600 hover:from-cyan-600 hover:to-teal-700 text-white font-semibold py-4 px-6 rounded-xl flex items-center justify-between shadow-lg shadow-cyan-200/50">
+                <span class="flex items-center gap-4">
+                    <div class="bg-white/20 p-2.5 rounded-lg w-10 h-10 flex items-center justify-center">
+                        <i class="fa-solid fa-lightbulb text-xl"></i>
+                    </div>
+                    <span class="text-lg">Jefe/a del FEIE</span>
+                </span>
+                <i class="fa-solid fa-chevron-right opacity-70"></i>
+            </a>
+
+
+             <!-- Botón 7: Jefe/a del DACE (Rojo/Actividades) -->
+            <a href="https://gemini.google.com/gem/1_qai64RyOIlGGigY0EG__gheeqO44yfs?usp=sharing" target="_blank" class="btn-custom block w-full bg-gradient-to-r from-red-500 to-orange-600 hover:from-red-600 hover:to-orange-700 text-white font-semibold py-4 px-6 rounded-xl flex items-center justify-between shadow-lg shadow-red-200/50">
+                <span class="flex items-center gap-4">
+                    <div class="bg-white/20 p-2.5 rounded-lg w-10 h-10 flex items-center justify-center">
+                        <i class="fa-regular fa-calendar-days text-xl"></i>
+                    </div>
+                    <span class="text-lg">Jefe/a del DACE</span>
+                </span>
+                <i class="fa-solid fa-chevron-right opacity-70"></i>
+            </a>
+
+
+        </div>
+
+
+        <!-- Footer -->
+        <div class="bg-gray-50 px-6 py-6 text-center border-t border-gray-100">
+            <p class="text-xs text-gray-400 mb-2">
+                © <span id="year"></span> Dra. Josefa de los Reyes
+            </p>
+        </div>
+
+
+    </main>
+
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
